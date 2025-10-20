@@ -1,4 +1,4 @@
-name: Build and Deploy to GitHub Pages
+name: Deploy Astro to GitHub Pages
 
 on:
   push:
@@ -8,12 +8,15 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write   # ✅ PERMISO PARA CREAR gh-pages
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
+          persist-credentials: false  # ✅ NECESARIO PARA SOLUCIONAR EL ERROR 128
 
       - name: Setup Node
         uses: actions/setup-node@v3
@@ -26,7 +29,7 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages 🚀
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

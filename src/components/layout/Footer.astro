@@ -1,0 +1,113 @@
+---
+import LinkedinIcon from "@components/icon/Linkedin.astro";
+import InstagramIcon from "@components/icon/Instagram.astro";
+import GithubIcon from "@components/icon/Github.astro";
+import TwitterIcon from "@components/icon/Twitter.astro";
+import DiscordIcon from "@components/icon/Discord.astro";
+---
+
+<div class="divFooter">
+  <div class="navbar-Foot">
+    <div class="Imf">
+      <div class="">
+        <p class="divtexf1">Desarrollado por</p>
+      </div>
+      <img class="imglogoF" src="../logo1.3.png" alt="logo" />
+    </div>
+    <div class="">
+      <p class="divtexf1">©2025 Todos los derechos reservados 🛸</p>
+    </div>
+    <ul>
+      <li>
+        <button>
+          <a href="https://github.com/brayanSramos">
+            <GithubIcon class="h-6 w-6 fill-[#fff]" />
+          </a>
+        </button>
+      </li>
+      <li>
+        <button>
+          <a href="https://discord.com/invite/braynsramos">
+            <DiscordIcon class="h-6 w-6 fill-[#fff]" />
+          </a>
+        </button>
+      </li>
+      <li>
+        <button>
+          <a href="https://x.com/BraynSRamos">
+            <TwitterIcon class="h-6 w-6 fill-[#fff]" />
+          </a>
+        </button>
+        <li>
+          <button>
+            <a href="https://www.instagram.com/braynsramos/">
+              <InstagramIcon class="h-6 w-6 fill-[#fff]" />
+            </a>
+          </button>
+        </li>
+        <li>
+          <button>
+            <a href="https://www.linkedin.com/in/braynsramos/">
+              <LinkedinIcon class="h-6 w-6 fill-[#fff]" />
+            </a>
+          </button>
+        </li>
+      </li>
+    </ul>
+  </div>
+
+  <style>
+    .divFooter {
+      background-image: url(../../../public/ttten.svg);
+      background-color: #292e3b;
+      color: #ffffff;
+    }
+    .divFooter .navbar-Foot ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .divFooter .navbar-Foot li {
+      margin-left: 20px;
+    }
+    .divFooter .navbar-Foot li a {
+      display: flex;
+      align-items: center;
+      font-size: 18px;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    .divFooter .navbar-Foot li a:hover {
+      color: #e5e52e;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-decoration-style: wavy;
+      text-underline-offset: 7px;
+    }
+    .divtexf1 {
+      list-style-type: none;
+      margin: 0;
+      justify-content: center;
+      text-align: center;
+      padding: 14px 16px;
+    }
+    .Imf {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+      padding: 1rem;
+    }
+    .imglogoF {
+      width: 10%;
+    }
+  </style>
+</div>

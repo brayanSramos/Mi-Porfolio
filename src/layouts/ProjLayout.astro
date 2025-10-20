@@ -1,0 +1,198 @@
+---
+import Layout from "./Layout.astro";
+import Header from "@components/layout/Header.astro";
+import Footer from "@components/layout/Footer.astro";
+import FacebookIcon from "@components/icon/Facebook.astro";
+import InstagramIcon from "@components/icon/Instagram.astro";
+
+const {
+  content: {
+    title,
+    nomComp,
+    avatar,
+    imga,
+    logo,
+    imgaPost,
+    description,
+    link,
+    face,
+    ins,
+    linkQuines,
+    titleweb,
+  },
+} = Astro.props;
+---
+
+<Layout>
+  <Header />
+  <section class="relative bg-cover bg-center bg-no-repeat imgb">
+    <img
+      alt={title}
+      src={imgaPost}
+      class="absolute inset-0 h-full w-full object-cover"
+    />
+    <div
+      class="absolute inset-0 bg-gray-900/75 sm:bg-transparent sm:from-gray-900/95 sm:to-gray-900/25 ltr:sm:bg-gradient-to-r rtl:sm:bg-gradient-to-l"
+    >
+    </div>
+
+    <div
+      class="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8"
+    >
+      <div class="max-w-xl text-center ltr:sm:text-left rtl:sm:text-right">
+        <strong class="block font-extrabold colorText"
+          ><img src={logo} alt={nomComp} /></strong
+        >
+        <p class="mt-4 colorText">
+          {description}
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-4 text-center"></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="mx-auto max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:h-screen lg:grid-cols-2">
+        <div class="relative z-10 lg:py-16">
+          <div class="relative h-64 sm:h-80 lg:h-full rounded border">
+            <img
+              alt={title}
+              src={imga}
+              class="absolute inset-0 h-full w-full object-cover"
+            />
+          </div>
+        </div>
+        <div class="colorS relative flex items-center">
+          <span
+            class="colorS hidden lg:absolute lg:inset-y-0 lg:-start-16 lg:block lg:w-16"
+          ></span>
+          <div class="p-8 sm:p-16 lg:p-24">
+            <h2 class="text-[#e5e52e] text-2xl font-bold sm:text-3xl">
+              {nomComp}
+            </h2>
+            <p class="colorB mt-4">
+              <slot />
+            </p>
+            <div class="mt-4 mb-4">
+              <a
+                class="colorB group relative inline-flex items-center overflow-hidden rounded px-8 py-3 text-white focus:outline-none focus:ring active:bg-[#e5e52e]"
+                href={link}
+              >
+                <span
+                  class="absolute -start-full transition-all group-hover:start-4"
+                >
+                  <svg
+                    class="size-5 rtl:rotate-180"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                  </svg>
+                </span>
+
+                <span
+                  class="text-sm font-medium transition-all group-hover:ms-4"
+                  >Ver pagina
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-gray-100 imgbf">
+    <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
+      <div class="flex justify-center text-[#292e3b]">
+        <img src={logo} alt={title} width="300" height="300" />
+      </div>
+
+      <p
+        class="mx-auto mt-6 max-w-md text-center leading-relaxed text-[#292e3b]"
+      >
+        {description}
+      </p>
+
+      <ul class="mt-2 flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12">
+        <li>
+          <a class="text-[#292e3b] transition hover:text-[#e5e52e]" href={link}>
+            {titleweb}
+          </a>
+        </li>
+
+        <li>
+          <a
+            class="text-[#292e3b] transition hover:text-[#e5e52e]"
+            href={linkQuines}
+          >
+            Sobre nosotros
+          </a>
+        </li>
+      </ul>
+
+      <!-- Icon redes 📱inicio -->
+      <ul class="mt-10 flex justify-center gap-6 md:gap-8">
+        <li>
+          <a
+            href={face}
+            rel="noreferrer"
+            target="_blank"
+            class="text-gray-700 transition hover:text-[#e5e52e]"
+          >
+            <span class="sr-only">Facebook</span>
+            <FacebookIcon class="h-6 w-6 fill-[#292e3b]" />
+          </a>
+        </li>
+
+        <li>
+          <a
+            href={ins}
+            rel="noreferrer"
+            target="_blank"
+            class="text-gray-700 transition hover:text-[#e5e52e]"
+          >
+            <span class="sr-only">Instagram</span>
+            <InstagramIcon class="h-6 w-6 fill-[#292e3b]" /></a
+          >
+        </li>
+      </ul>
+      <!-- Icon redes📱Final -->
+    </div>
+  </footer>
+  <Footer />
+</Layout>
+
+<style>
+  .imgb {
+    background-image: url(/public/ttten.svg);
+  }
+
+  .imgbf {
+    background-image: url(/public/fonCar.svg);
+  }
+
+  .colorS {
+    background-color: #292e3b;
+  }
+  .colorT {
+    color: #292e3b;
+  }
+  .colorText {
+    color: #292e3b;
+  }
+  .colorB {
+    color: #ffffff;
+  }
+  .colorBc {
+    background-color: #ffffff;
+  }
+</style>
